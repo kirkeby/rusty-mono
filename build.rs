@@ -24,6 +24,6 @@ fn main() {
     for i in INCLUDES {
         gcc.include(format!("{}{}", sdk_root, i));
     }
-    gcc.file("src/stubs.cc").compile("libstubs.a");
+    gcc.file("src/generated.cc").compile("libgenerated.a");
     println!("cargo:rustc-link-lib=static=empty");
 }
