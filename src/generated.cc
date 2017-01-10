@@ -1,8 +1,8 @@
 #include <new>
-#include "/home/sune/Projects/mono_framework/dist/mono/include/application_context_interface.h"
-#include "/home/sune/Projects/mono_framework/dist/mono/include/application_controller_interface.h"
-#include "/home/sune/Projects/mono_framework/dist/mono/include/application_run_loop.h"
-#include "/home/sune/Projects/mono_framework/dist/mono/include/application_context.h"
+#include "/home/ski/Random/mono_framework/dist/mono/include/application_context.h"
+#include "/home/ski/Random/mono_framework/dist/mono/include/application_controller_interface.h"
+#include "/home/ski/Random/mono_framework/dist/mono/include/application_run_loop.h"
+#include "/home/ski/Random/mono_framework/dist/mono/include/application_context_interface.h"
 
 /* mono::AppRunLoop::CheckUsbDtr() */
 extern "C"

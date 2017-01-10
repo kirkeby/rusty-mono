@@ -1,17 +1,24 @@
+#![allow(non_snake_case)]
+#![allow(improper_ctypes)]
 pub mod mono {
     pub struct AppRunLoop {
-        raw: [u8],
+    #[allow(dead_code)]
+        raw: [u8; 32],
     }
     pub struct ApplicationContext {
+    #[allow(dead_code)]
         raw: [u8; 1],
     }
     pub struct IApplication {
+    #[allow(dead_code)]
         raw: [u8; 8],
     }
     pub struct IApplicationContext {
+    #[allow(dead_code)]
         raw: [u8; 1],
     }
     pub struct IRunLoopTask {
+    #[allow(dead_code)]
         raw: [u8; 32],
     }
     extern "C" {
@@ -37,8 +44,6 @@ pub mod mono {
         fn stub__ZN4mono12IApplication17monoWakeFromSleepEv(o: *mut u8) -> ();
         // mono::IApplication::monoWillGotoSleep()
         fn stub__ZN4mono12IApplication17monoWillGotoSleepEv(o: *mut u8) -> ();
-        // mono::IApplication::IApplication()
-        fn stub__ZN4mono12IApplicationC1Ev(o: *mut u8) -> ();
         // mono::ApplicationContext::setMonoApplication(mono::IApplication *)
         fn stub__ZN4mono18ApplicationContext18setMonoApplicationEPNS_12IApplicationE(o: *mut u8, p0: *mut ::mono::IApplication) -> ();
         // mono::ApplicationContext::exec()
@@ -71,11 +76,9 @@ pub mod mono {
             unsafe { stub__ZN4mono10AppRunLoop4execEv(&mut self.raw[0] as *mut u8) }
         }
         pub fn new() -> ::mono::AppRunLoop {
-            
-        let mut o = ::mono::AppRunLoop { raw: Default::default() };
-        unsafe { stub__ZN4mono10AppRunLoopC1Ev(&mut o.raw[0] as *mut u8); }
-        o
-        
+            let mut o = ::mono::AppRunLoop { raw: Default::default() };
+            unsafe { stub__ZN4mono10AppRunLoopC1Ev(&mut o.raw[0] as *mut u8); }
+            o
         }
         pub fn quit(&mut self) -> () {
             unsafe { stub__ZN4mono10AppRunLoop4quitEv(&mut self.raw[0] as *mut u8) }
@@ -107,13 +110,6 @@ pub mod mono {
         }
         pub fn monoWillGotoSleep(&mut self) -> () {
             unsafe { stub__ZN4mono12IApplication17monoWillGotoSleepEv(&mut self.raw[0] as *mut u8) }
-        }
-        pub fn new() -> ::mono::IApplication {
-            
-        let mut o = ::mono::IApplication { raw: Default::default() };
-        unsafe { stub__ZN4mono12IApplicationC1Ev(&mut o.raw[0] as *mut u8); }
-        o
-        
         }
     }
     impl IApplicationContext {
