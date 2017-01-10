@@ -1,5 +1,7 @@
 extern crate gcc;
 
+use std::process::Command;
+
 const INCLUDES : &'static [&'static str] = &[
     "",
     "mbed",
@@ -24,5 +26,14 @@ fn main() {
     for i in INCLUDES {
         gcc.include(format!("{}/include/{}", sdk_root, i));
     }
-    gcc.file("src/generated.cc").compile("libgenerated.a");
+    gcc.file("src/generated.cc");
+    gcc.file("src/helpers.cc");
+    gcc.compile("libgenerated.a");
+
+    // The Mono framework comes with a bunch of very broken ar(1) archives,
+    // first problem is they're not named properly, so cc(1) can not find them
+    // and link against them, second problem is that some of them contain
+    // non-object-files, which really make Rust unhappy.
+    Command::new("./build.sh").status().expect("build.sh failed");
+    println!("cargo:rustc-link-lib=static=all-of-mono");
 }
