@@ -18,12 +18,11 @@ const INCLUDES : &'static [&'static str] = &[
 ];
 
 fn main() {
-    let sdk_root = "../mono_framework/dist/mono/include/".to_string();
+    let sdk_root = "../mono_framework/dist/mono".to_string();
     let mut gcc = gcc::Config::new();
     gcc.cpp(true);
     for i in INCLUDES {
-        gcc.include(format!("{}{}", sdk_root, i));
+        gcc.include(format!("{}/include/{}", sdk_root, i));
     }
     gcc.file("src/generated.cc").compile("libgenerated.a");
-    println!("cargo:rustc-link-lib=static=empty");
 }
