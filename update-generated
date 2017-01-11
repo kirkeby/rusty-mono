@@ -1,0 +1,60 @@
+#!/bin/sh
+
+set -e
+
+MONO_PATH=`realpath ../mono_framework/dist/mono`
+
+/usr/bin/python ../cxx-rs/generate-wrapper.py \
+    -I${MONO_PATH}/include/mbed \
+    -I${MONO_PATH}/include/mbed/api \
+    -I${MONO_PATH}/include/mbed/hal \
+    -I${MONO_PATH}/include/mbed/target_cypress \
+    -I${MONO_PATH}/include/mbed/libraries/fs/sd \
+    -I${MONO_PATH}/include/mbed/libraries/fs/fat \
+    -I${MONO_PATH}/include/mbed/libraries/fs/fat/ChaN \
+    -I${MONO_PATH}/include \
+    -I${MONO_PATH}/include/display \
+    -I${MONO_PATH}/include/display/ili9225g \
+    -I${MONO_PATH}/include/display/ui \
+    -I${MONO_PATH}/include/media \
+    -I${MONO_PATH}/include/wireless \
+    -I${MONO_PATH}/include/mbed/target_cypress \
+    -I/usr/include/newlib \
+    mn_string.h \
+    application_context_interface.h \
+    application_controller_interface.h \
+    application_run_loop_task_interface.h \
+    point.h \
+    circle.h \
+
+exit 0
+
+    color.h \
+    consoles.h \
+    async.h \
+    display/ui/animator.h \
+    display/ui/background_view.h \
+    display/ui/abstract_button_view.h \
+    display/ui/on_off_button_view.h \
+    display/ui/button_view.h \
+    display/ui/console_view.h \
+    display/ui/graph_view.h \
+    display/ui/image_view.h \
+    display/ui/progress_bar_view.h \
+    display/ui/responder_view.h \
+    display/ui/status_indicator_view.h \
+    display/ui/text_label_view.h \
+    display/ui/touch_calibrator.h \
+    display/ui/view.h \
+    display_painter.h \
+    media/bmp_image.h \
+    media/image.h \
+    mn_digital_out.h \
+    mn_string.h \
+    mn_timer.h \
+    queue.h \
+    queue_interrupt.h \
+    rect.h \
+    regex.h \
+    size.h \
+    touch_system_interface.h \
