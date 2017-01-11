@@ -26,10 +26,15 @@ MONO_PATH=`realpath ../mono_framework/dist/mono`
     application_run_loop_task_interface.h \
     point.h \
     circle.h \
+    color.h \
+    rect.h \
+    size.h \
+    display/font_interface.h \
+    display/ui/view.h \
+    display/ui/text_label_view.h \
 
 exit 0
 
-    color.h \
     consoles.h \
     async.h \
     display/ui/animator.h \
@@ -43,18 +48,13 @@ exit 0
     display/ui/progress_bar_view.h \
     display/ui/responder_view.h \
     display/ui/status_indicator_view.h \
-    display/ui/text_label_view.h \
     display/ui/touch_calibrator.h \
-    display/ui/view.h \
     display_painter.h \
     media/bmp_image.h \
     media/image.h \
     mn_digital_out.h \
-    mn_string.h \
     mn_timer.h \
     queue.h \
     queue_interrupt.h \
-    rect.h \
     regex.h \
-    size.h \
     touch_system_interface.h \
