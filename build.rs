@@ -23,6 +23,7 @@ fn main() {
     let sdk_root = "../mono_framework/dist/mono".to_string();
     let mut gcc = gcc::Config::new();
     gcc.cpp(true);
+    gcc.flag("-fno-rtti");
     for i in INCLUDES {
         gcc.include(format!("{}/include/{}", sdk_root, i));
     }
