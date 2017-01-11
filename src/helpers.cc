@@ -29,20 +29,24 @@ void run_mono(mono_callbacks callbacks)
 
 AppController::AppController(mono_callbacks cb) : callbacks(cb)
 {
+    printf("AppController::AppController()\r\n");
     (callbacks.initialize)();
 }
 
 void AppController::monoWakeFromReset()
 {
+    printf("AppController::monoWakeFromReset()\r\n");
     (callbacks.wake_from_reset)();
 }
 
 void AppController::monoWillGotoSleep()
 {
+    printf("AppController::monoWillGotoSleep()\r\n");
     (callbacks.will_goto_sleep)();
 }
 
 void AppController::monoWakeFromSleep()
 {
+    printf("AppController::monoWakeFromSleep()\r\n");
     (callbacks.wake_from_sleep)();
 }

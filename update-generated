@@ -29,14 +29,11 @@ MONO_PATH=`realpath ../mono_framework/dist/mono`
     color.h \
     rect.h \
     size.h \
+    consoles.h \
+    async.h \
     display/font_interface.h \
     display/ui/view.h \
     display/ui/text_label_view.h \
-
-exit 0
-
-    consoles.h \
-    async.h \
     display/ui/animator.h \
     display/ui/background_view.h \
     display/ui/abstract_button_view.h \
@@ -56,5 +53,5 @@ exit 0
     mn_timer.h \
     queue.h \
     queue_interrupt.h \
-    regex.h \
+    touch_event.h \
     touch_system_interface.h \
