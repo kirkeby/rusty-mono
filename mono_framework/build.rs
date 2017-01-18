@@ -20,7 +20,7 @@ const INCLUDES : &'static [&'static str] = &[
 ];
 
 fn main() {
-    let sdk_root = "../mono_framework/dist/mono".to_string();
+    let sdk_root = "../../mono_framework/dist/mono".to_string();
     let mut gcc = gcc::Config::new();
     gcc.cpp(true);
     gcc.flag("-fno-rtti");

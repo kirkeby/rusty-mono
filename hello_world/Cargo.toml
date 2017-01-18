@@ -1,0 +1,16 @@
+[package]
+name = "hello_world"
+version = "0.1.0"
+authors = ["Sune Kirkeby <mig@ibofobi.dk>"]
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+[dependencies]
+mono_framework_rs = { path = "../mono_framework" }
