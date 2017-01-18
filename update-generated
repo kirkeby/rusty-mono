@@ -4,7 +4,7 @@ set -e
 
 MONO_PATH=`realpath ../mono_framework/dist/mono`
 
-/usr/bin/python ../cxx-rs/generate-wrapper.py \
+/usr/bin/python generate-wrapper.py \
     -I${MONO_PATH}/include/mbed \
     -I${MONO_PATH}/include/mbed/api \
     -I${MONO_PATH}/include/mbed/hal \
