@@ -1,0 +1,10 @@
+[package]
+authors = ["Sune Kirkeby <mig@ibofobi.dk>", "The Rust Project Developers"]
+name = "alloc_malloc"
+version = "0.0.0"
+
+[lib]
+name = "alloc_malloc"
+path = "lib.rs"
+test = false
+doc = false
