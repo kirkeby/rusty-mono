@@ -1,6 +1,7 @@
 #![no_std]
 #![feature(lang_items, collections)]
 
+extern crate alloc_malloc;
 extern crate collections;
 
 use collections::string::String;
